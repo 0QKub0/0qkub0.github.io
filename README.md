@@ -1,4 +1,4 @@
-LAB 1
+LAB 1,2
 
 Adres Strony: 0qkub0.github.io
 
