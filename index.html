@@ -9,7 +9,7 @@
 	<meta name="author" content="dr inż. Jacek Paluszak">
 	<link rel="icon" href="img/favicon.ico">
 
-	<title>Programowanie w JAVASCRIPT</title>
+	<title>Lab2MykytaTarakanov20721</title>
 
 	<!-- Bootstrap core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -79,7 +79,7 @@
 				<h1>Języki wysokiego poziomu <br> w aplikacjach internetowych</h1>
 				<div class="row">
 					<div class="col-md-2" align="left">
-						<p>nazwisko:</p>
+						<p>Nazwisko:</p>
 					</div>
 					<div class="col-md-4">
 						<div id="surname"></div>
@@ -87,7 +87,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-2" align="left">
-						<p>imię:</p>
+						<p>Imię:</p>
 
 					</div>
 					<div class="col-md-4">
@@ -96,15 +96,15 @@
 				</div>
 				<div class="row">
 					<div class="col-md-2" align="left">
-						<p>grupa:</p>
+						<p>Grupa:</p>
 					</div>
 					<div class="col-md-4">
-						<div id='group'></div>
+						<div id='group'>-</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-2" align="left">
-						<p>email:</p>
+						<p>Email:</p>
 					</div>
 					<div class="col-md-4">
 						<div id='email'></div>
@@ -112,7 +112,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-2" align="left">
-						<p>nr indeksu:</p>
+						<p>Nr indeksu:</p>
 					</div>
 					<div class="col-md-4">
 						<div id='indexNumber'></div>
@@ -129,24 +129,18 @@
 		<div class="container">
 			<div class="jumbotron" id="zad3">
 				<h1>Projekt 1</h1>
-
-				<div id="wyniki"></div>
-
-			</div>
-		</div>
-	</section>
-
-
-	<section id="projekt2">
-		<div class="container">
-			<div class="jumbotron">
-				<h1>Projekt 2 - Quiz</h1>
-				<div id="quiz-container"></div>
-				<button id="submit-button">Sprawdź wyniki</button>
+				<div id="question"></div>
+				<div id="options"></div>
+				<div class="spacer"></div>
+				<button id="nextButton">Dalej</button>
 				<div id="results"></div>
+
 			</div>
 		</div>
 	</section>
+
+
+
 
 	<footer>
 		<div class="container" style="margin-top: 5%">
@@ -271,10 +265,105 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/ie10-viewport-bug-workaround.js"></script>
 	<script src="js/forms.js"></script>
+	<script>
+		//LAB 2 
+		let score = 0;
+		let q = 0;
+		let message;
+		const quizQuestions = [
+			{
+				question: "Jakie miasto jest stolicą Francji?",
+				options: ["a) Berlin", "b) Madryt", "c) Paryż", "d) Rzym"],
+				answer: "c) Paryż"
+			},
+			{
+				question: "Jakie miasto jest stolicą Niemiec?",
+				options: ["a) Berlin", "b) Wiedeń", "c) Bruksela", "d) Amsterdam"],
+				answer: "a) Berlin"
+			},
+			{
+				question: "Jakie miasto jest stolicą Włoch?",
+				options: ["a) Rzym", "b) Lizbona", "c) Ateny", "d) Bukareszt"],
+				answer: "a) Rzym"
+			},
+			{
+				question: "Jakie miasto jest stolicą Hiszpanii?",
+				options: ["a) Madryt", "b) Barcelona", "c) Sewilla", "d) Walencja"],
+				answer: "a) Madryt"
+			},
+			{
+				question: "Jakie miasto jest stolicą Kanady?",
+				options: ["a) Toronto", "b) Vancouver", "c) Ottawa", "d) Montreal"],
+				answer: "c) Ottawa"
+			}
+		];
+		const questionElement = document.getElementById("question");
+		const optionsElement = document.getElementById("options");
+		const nextButton = document.getElementById("nextButton");
+		const results = document.getElementById("results");
+
+
+		function showQuestion() {
+			const currentQuestion = quizQuestions[q];
+			questionElement.textContent = currentQuestion.question;
+			
+			optionsElement.innerHTML = '';
+			currentQuestion.options.forEach(option => {
+				const button = document.createElement('button');
+				button.textContent = option;
+				button.onclick = () => selectAnswer(option);
+				optionsElement.appendChild(button);
+			});
+			nextButton.style.display = 'none';
+
+		}
+
+		function selectAnswer(selectedOption) {
+			const currentQuestion = quizQuestions[q];
+			if (selectedOption === currentQuestion.answer) {
+				score++;
+			}
+			nextButton.style.display = 'block';
+		}
+		nextButton.onclick = () => {
+			q++;
+			if(q < quizQuestions.length) {
+				const spacer = document.createElement('div');
+				spacer.className = 'spacer';
+				optionsElement.appendChild(spacer);
+				
+				showQuestion();
+			} else {
+				showScore();
+			}
+		};
+
+		function showScore() {
+			message = `Koniec quizu! Zlobyłeś ${score} punktów z ${quizQuestions.length}`
+			results.innerHTML = message;
+		}
+
+
+		showQuestion();
+
+
+
+	</script>
 	<script defer>
-		let name = prompt('Jak masz na imię?', '');
-		const nameElement = document.getElementById('name')
+		let name = "Mykyta";
+		let surname = "Tarakanov";
+		let email = "20721@student.ans-elblag.pl";
+		let indexNumber = 20721
+
+		const nameElement = document.getElementById('name');
+		const indexElement = document.getElementById('indexNumber');
+		const surnameElement = document.getElementById('surname');
+		const emailElement = document.getElementById('email');
+
 		nameElement.innerHTML += name;
+		surnameElement.innerHTML += surname;
+		emailElement.innerHTML += email;
+		indexElement.innerHTML += indexNumber;
 
 	</script>
 	<script defer>
@@ -322,27 +411,29 @@
 		// const imieElement = document.getElementById('name');
 		// const miastoElement = document.getElementById('city');
 		// nazwiskoElement.innerHTML += 'Kowalski';
-		// imieElement.innerHTML += imiona[0]; 
-		// miastoElement.innerHTML += miasta[1]; 
+		// imieElement.innerHTML += imiona[0];
+		// miastoElement.innerHTML += miasta[1];
 
-		// ZADANIE 3 
-		const wszystkieElementy = document.querySelectorAll('*');
-		const iloscWszystkichElementow = wszystkieElementy.length;
+		// ZADANIE 3
+		// const wszystkieElementy = document.querySelectorAll('*');
+		// const iloscWszystkichElementow = wszystkieElementy.length;
 
-		const wynikiDiv = document.getElementById("wyniki");
-		wynikiDiv.innerHTML += `<p>Liczba wszystkich elementów na stronie: ${iloscWszystkichElementow}</p>`;
+		// const wynikiDiv = document.getElementById("wyniki");
+		// wynikiDiv.innerHTML += `<p>Liczba wszystkich elementów na stronie: ${iloscWszystkichElementow}</p>`;
 
 
-		// ZADANIE 2
-		const nowaTablica = ["jabłko", "banan", "pomarańcza", "gruszka"];
-		nowaTablica.unshift("ananas");
+		// // ZADANIE 2
+		// const nowaTablica = ["jabłko", "banan", "pomarańcza", "gruszka"];
+		// nowaTablica.unshift("ananas");
 
-		wynikiDiv.innerHTML += `<p>Pierwszy element tablicy: <strong>${nowaTablica[0]}</strong></p>`;
-		wynikiDiv.innerHTML += `<p>Ostatni element tablicy: <strong>${nowaTablica[nowaTablica.length - 1]}</strong></p>`;
+		// wynikiDiv.innerHTML += `<p>Pierwszy element tablicy: <strong>${nowaTablica[0]}</strong></p>`;
+		// wynikiDiv.innerHTML += `<p>Ostatni element tablicy: <strong>${nowaTablica[nowaTablica.length - 1]}</strong></p>`;
 
-		//ZADANIE 1
-		let tablica = [1, 2, 3, 4, 5, 6, 7];
-		alert(tablica[0]); Z
+		// //ZADANIE 1
+		// let tablica = [1, 2, 3, 4, 5, 6, 7];
+		// alert(tablica[0]); Z
+
+
 	</script>
 </body>
 
