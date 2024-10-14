@@ -1,5 +1,4 @@
-LAB 1,2
-
+LABORATORIUM JĘZYKI WYSOKIEGO POZIOMU W APLIKACJACH INTERNETOWYCH
 Adres Strony: 0qkub0.github.io
 
 Imię i nazwisko: Mykyta Tarakanov
