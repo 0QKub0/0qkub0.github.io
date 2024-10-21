@@ -1,5 +1,5 @@
 LABORATORIUM JĘZYKI WYSOKIEGO POZIOMU W APLIKACJACH INTERNETOWYCH
-Adres Strony: 0qkub0.github.io
+Adres Strony: desirecutieqb.github.io
 
 Imię i nazwisko: Mykyta Tarakanov
 
