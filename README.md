@@ -1,8 +1,14 @@
-# React + Vite
+LABORATORIUM JĘZYKI WYSOKIEGO POZIOMU W APLIKACJACH INTERNETOWYCH
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Adres Strony: desirecutieqb.github.io
 
-Currently, two official plugins are available:
+Adres strony LAB8: https://gilded-taffy-eec9e9.netlify.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+Imię i nazwisko: Mykyta Tarakanov
+
+Numer albumu: 20721
+
+Email: 20721@student.ans-elblag.pl
+
+
