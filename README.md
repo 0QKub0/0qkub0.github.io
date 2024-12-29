@@ -8,6 +8,9 @@ Adres strony LAB9: https://desirecutieqb-github-io-lab9.vercel.app
 
 Adres strony LAB10: https://desirecutieqb-github-7zwwzlta9-desirecutieqbs-projects.vercel.app
 
+Adres strony LAB11: https://desirecutieqb-github-io-le7a.vercel.app
+
+
 Imię i nazwisko: Mykyta Tarakanov
 
 Numer albumu: 20721
