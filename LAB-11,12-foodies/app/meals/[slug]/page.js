@@ -2,6 +2,8 @@
 import styles from './page.module.css'; // Import your CSS module
 import { getMeal } from '@/lib/meals';
 
+export const runtime = 'nodejs';  // Force Node runtime
+
 export default async function MealPage({ params }) {
   // `params.slug` is the dynamic segment from the URL
   const meal = await getMeal(params.slug);
